@@ -18,7 +18,7 @@ function refreshMap() {
   var jsonDataObject = [];
 
   $.getJSON(
-    "YOUR JSON https://spreadsheets.google.com/feeds/list/1lzT1-uyyN5LcNVhmZIbCtUXJ-z5iHFt5da5m9emXyIM/1/public/full?alt=json",
+    "https://spreadsheets.google.com/feeds/list/1lzT1-uyyN5LcNVhmZIbCtUXJ-z5iHFt5da5m9emXyIM/1/public/full?alt=json",
     function (data) {
       for (var i = 0; i < data.feed.entry.length; ++i) {
         var json_data = {
@@ -58,14 +58,10 @@ function refreshMap() {
               .openOn(map);
           }
 
-          L.tileLayer(
-            "http://{s}.tile.cloudmade.com/e7b61e61295a44a5b319ca0bd3150890/997/256/{z}/{x}/{y}.png",
-            {
-              attribution:
-                'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery Â© <a href="http://cloudmade.com">CloudMade</a>',
-              maxZoom: 18,
-            }
-          ).addTo(map);
+          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution:
+              '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+          }).addTo(map);
         }
       }
     }
