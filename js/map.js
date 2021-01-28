@@ -18,7 +18,7 @@ function refreshMap() {
   var jsonDataObject = [];
 
   $.getJSON(
-    "https://spreadsheets.google.com/feeds/list/1lzT1-uyyN5LcNVhmZIbCtUXJ-z5iHFt5da5m9emXyIM/1/public/full?alt=json",
+    "https://spreadsheets.google.com/feeds/list/19w-_REjKOCMT2vZmgIAFoXAdflyAa_hDTwcctmt2D-Q/1/public/full?alt=json",
     function (data) {
       for (var i = 0; i < data.feed.entry.length; ++i) {
         var json_data = {
