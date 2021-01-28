@@ -60,7 +60,7 @@ function refreshMap() {
               parseFloat(jsonDataObject[j].Latitude),
               parseFloat(jsonDataObject[j].Longitude)
             ),
-            {icon: Icon}
+            // {icon: Icon}
           );
 
           marker.bindPopup(jsonDataObject[j].City, {
