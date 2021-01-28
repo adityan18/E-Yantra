@@ -27,16 +27,42 @@ function refreshMap() {
           Item: data.feed.entry[i].gsx$item.$t,
           Latitude: parseFloat(data.feed.entry[i].gsx$latitude.$t),
           Longitude: parseFloat(data.feed.entry[i].gsx$longitude.$t),
+          Dispatch: data.feed.entry[i].gsx$dispatched.$t,
+          Shipped: data.feed.entry[i].gsx$shipped.$t,
         };
         jsonDataObject.push(json_data);
 
         for (var j = 0; j < jsonDataObject.length; j++) {
+          var LeafIcon = L.Icon.extend({
+            options: {
+              iconSize: [29, 41],
+              iconAnchor: [22, 94],
+              popupAnchor: [-3, -76],
+            },
+          });
+
+          if (jsonDataObject[j].Shipped == "Yes") {
+            var Icon = new LeafIcon({
+              iconUrl: "img/green.png",
+            });
+          } else if (jsonDataObject[j].Dispatch == "Yes") {
+            var Icon = new LeafIcon({
+              iconUrl: "img/yellow.png",
+            });
+          } else {
+            var Icon = new LeafIcon({
+              iconUrl: "img/red.png",
+            });
+          }
+
           var marker = L.marker(
             L.latLng(
               parseFloat(jsonDataObject[j].Latitude),
               parseFloat(jsonDataObject[j].Longitude)
-            )
+            ),
+            {icon: Icon}
           );
+
           marker.bindPopup(jsonDataObject[j].City, {
             autoClose: false,
           });
