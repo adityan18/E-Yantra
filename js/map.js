@@ -35,8 +35,8 @@ function refreshMap() {
         for (var j = 0; j < jsonDataObject.length; j++) {
           var LeafIcon = L.Icon.extend({
             options: {
-              iconSize: [29, 41],
-              iconAnchor: [22, 94],
+              iconSize: [41, 41],
+              iconAnchor: [20, 41],
               popupAnchor: [-3, -76],
             },
           });
@@ -60,11 +60,11 @@ function refreshMap() {
               parseFloat(jsonDataObject[j].Latitude),
               parseFloat(jsonDataObject[j].Longitude)
             ),
-            // {icon: Icon}
+            { icon: Icon }
           );
 
           marker.bindPopup(jsonDataObject[j].City, {
-            autoClose: false,
+            autoClose: true,
           });
           map.addLayer(marker);
           marker.on("click", onClick_Marker);
@@ -76,7 +76,10 @@ function refreshMap() {
             popup = L.popup()
               .setLatLng(marker.getLatLng())
               .setContent(
-                "Order ID: " +
+                "<center>City:<b>" +
+                  marker.myJsonData.City +
+                  "</b></center>" +
+                  "Order ID: " +
                   marker.myJsonData.OderID +
                   " || Item: " +
                   marker.myJsonData.Item
