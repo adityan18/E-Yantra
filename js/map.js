@@ -62,7 +62,7 @@ function refreshMap() {
             ),
             { icon: Icon }
           );
-1
+          1;
           map.addLayer(marker);
           marker.on("click", onClick_Marker);
           // Attach the corresponding JSON data to your marker:

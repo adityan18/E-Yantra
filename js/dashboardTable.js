@@ -1,11 +1,8 @@
 /////////////Ajax Requests////////////
 $(document).ready(function () {
-  // Fetch the initial table
-  refreshTable();
 
-  // Fetch every 1 second
-  setInterval(refreshTable, 1000);
-});
+  setInterval(refreshTable, 1000)
+})
 
 function refreshTable() {
   // var trHTML = '';

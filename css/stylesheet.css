@@ -5,7 +5,7 @@ body{
 #map {
     height: 600px;
     width: 100%;
-    padding-left: 100px;
+    /* padding-left: 100px; */
 }
 
 #table1{
@@ -30,7 +30,7 @@ td{
 }
 
 #header{
-    color: bisque;
+    color: beige;
 }
 
 #column_chart{
