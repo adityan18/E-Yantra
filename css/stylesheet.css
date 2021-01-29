@@ -1,3 +1,39 @@
-.body{
-    background-color: black;
+body{
+    background-color: rgb(0, 0, 0);
 }
+
+#map {
+    height: 600px;
+    width: 100%;
+    padding-left: 100px;
+}
+
+#table1{
+    width: 100%;
+    border: 1px solid black;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+th, td{
+    border: 1px solid black;
+    text-align: center;
+    border: 1;
+    color: honeydew;
+    padding: 5px;
+}
+th{
+    background-color: rgb(70, 69, 69);
+}
+td{
+    background-color: rgb(114, 111, 111);
+}
+
+#header{
+    color: bisque;
+}
+
+#column_chart{
+    height: 300px;
+}
+

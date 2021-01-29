@@ -14,7 +14,7 @@ function refreshMap() {
     container._leaflet_id = null;
   }
 
-  var map = L.map("map").setView([20.5937, 78.9629], 5);
+  var map = L.map("map").setView([20.5937, 78.9629], 4.8);
   var jsonDataObject = [];
 
   $.getJSON(
@@ -36,7 +36,7 @@ function refreshMap() {
           var LeafIcon = L.Icon.extend({
             options: {
               iconSize: [41, 41],
-              iconAnchor: [20, 41],
+              iconAnchor: [21, 41],
               popupAnchor: [-3, -76],
             },
           });
@@ -62,10 +62,7 @@ function refreshMap() {
             ),
             { icon: Icon }
           );
-
-          marker.bindPopup(jsonDataObject[j].City, {
-            autoClose: true,
-          });
+1
           map.addLayer(marker);
           marker.on("click", onClick_Marker);
           // Attach the corresponding JSON data to your marker:
