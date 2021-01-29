@@ -1,39 +1,64 @@
-body{
-    background-color: rgb(0, 0, 0);
+body {
+  background-color: rgb(0, 0, 0);
 }
 
 #map {
-    height: 600px;
-    width: 100%;
-    /* padding-left: 100px; */
+  height: 750px;
+  width: 100%;
+  grid-area: map;
+  overflow: hidden;
+  /* padding-left: 30px;
+  padding-right: 30px; */
 }
 
-#table1{
-    width: 100%;
-    border: 1px solid black;
-    padding-left: 30px;
-    padding-right: 30px;
+#table1 {
+  width: 100%;
+  border: 1px solid black;
+  /* padding-left: 30px;
+  padding-right: 30px; */
+  grid-area: table;
+  margin-top: 10px;
+  overflow: hidden;
 }
 
-th, td{
-    border: 1px solid black;
-    text-align: center;
-    border: 1;
-    color: honeydew;
-    padding: 5px;
+th,
+td {
+  border: 1px solid black;
+  text-align: center;
+  border: 1;
+  color: honeydew;
+  padding: 5px;
 }
-th{
-    background-color: rgb(70, 69, 69);
+th {
+  background-color: rgb(70, 69, 69);
 }
-td{
-    background-color: rgb(114, 111, 111);
+/* td {
+  background-color: rgb(114, 111, 111);
+} */
+
+tbody tr:hover {
+  background-color: brown;
 }
 
-#header{
-    color: beige;
+#header {
+  color: beige;
 }
 
-#column_chart{
-    height: 300px;
+.chart {
+  height: 500px;
+  grid-area: chart;
+  padding: 10px;
+  margin: 10px;
+  overflow: hidden;
 }
 
+#grid-container {
+  display: grid;
+  grid-template-areas:
+    "map"
+    "chart"
+    "table";
+  padding: 20px;
+  margin: 10px;
+  /* border: 10px solid ; */
+}

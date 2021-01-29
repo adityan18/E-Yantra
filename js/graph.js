@@ -2,7 +2,7 @@ $(document).ready(function () {
   // Fetch the initial Chart
   refreshChart();
   // Fetch every 5 second
-  setInterval(refreshChart, 2500);
+  setInterval(refreshChart, 1000);
 });
 google.charts.load("current", { packages: ["corechart"] });
 google.charts.setOnLoadCallback(refreshChart);

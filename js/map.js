@@ -4,7 +4,7 @@ $(document).ready(function () {
   refreshMap();
 
   // Fetch every 5 second
-  setInterval(refreshMap, 5000);
+  setInterval(refreshMap, 2000);
 });
 
 function refreshMap() {
@@ -14,7 +14,7 @@ function refreshMap() {
     container._leaflet_id = null;
   }
 
-  var map = L.map("map").setView([20.5937, 78.9629], 4.8);
+  var map = L.map("map").setView([20.5937, 78.9629], 5);
   var jsonDataObject = [];
 
   $.getJSON(
