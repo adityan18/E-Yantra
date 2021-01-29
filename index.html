@@ -6,25 +6,22 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-    <script src='js/dashboardTable.js' async=false></script>
 
     <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
     crossorigin=""
-      />
-    <script src="js/map.js" async=false></script>
+    />
 
-  	<script
+    <script
     src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
     integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
     crossorigin=""
-      ></script>
+    ></script>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-     <script src="js/graph.js" async=false></script>
 
     <link rel='stylesheet' href='css/stylesheet.css'/>
 
@@ -35,48 +32,51 @@
       <div id="eyantraLogo">
         <!-- eyantra logo -->
         <img
-          src="https://eyic.e-yantra.org/img/eYantra_logo_whitetext.png"
-          alt="e_yantra_logo"
-          width="290"
-          height="60"
+        src="https://eyic.e-yantra.org/img/eYantra_logo_whitetext.png"
+        alt="e_yantra_logo"
+        width="290"
+        height="60"
         /><br />
       </div>
     </center>
   </header>
   <body>
-      <center><h2 id='header'>VB#0393 Dashboard</h2></center>
+    <center><h2 id='header'>VB#0393 Dashboard</h2></center>
 
-      <div id="map" class="map"></div>
-      <br>
+    <div id="map" class="map"></div>
+    <br>
 
-      <div id="column_chart" class="chart"></div>
-      <br>
-        <!-- <hr
-        style="height: 4px; border-width: 0; color: gray; background-color: gray"
-        /> -->
+    <div id="column_chart" class="chart"></div>
+    <br>
+    <!-- <hr
+      style="height: 4px; border-width: 0; color: gray; background-color: gray"
+      /> -->
 
-        <table>
+      <table>
         <table id="table1">
-            <th>Order ID</th>
-            <th>Item</th>
-            <th>Priority</th>
-            <th>City</th>
-            <th>Dispatched</th>
-            <th>Shipped</th>
-            <th>Order Date and Time</th>
-            <th>Dispatch Date and Time</th>
-            <th>Shipped Date and Time</th>
-            <th>Time Taken (s)</th>
-            </tr>
-            <tbody id="tableContent"></tbody>
-        </table>
-        </table>
+          <th>Order ID</th>
+          <th>Item</th>
+          <th>Priority</th>
+          <th>City</th>
+          <th>Dispatched</th>
+          <th>Shipped</th>
+          <th>Order Date and Time</th>
+          <th>Dispatch Date and Time</th>
+          <th>Shipped Date and Time</th>
+          <th>Time Taken (s)</th>
+        </tr>
+        <tbody id="tableContent"></tbody>
+      </table>
+    </table>
 
-        <!-- <hr
-        style="height: 4px; border-width: 0; color: gray; background-color: gray" -->
-        <!-- /> -->
+    <!-- <hr
+      style="height: 4px; border-width: 0; color: gray; background-color: gray" -->
+      <!-- /> -->
 
-  </body>
+    </body>
+    <script src="js/graph.js" async=false></script>
+    <script src='js/dashboardTable.js' async=false></script>
+    <script src="js/map.js" async=false></script>
 
 
-</html>
+    </html>
