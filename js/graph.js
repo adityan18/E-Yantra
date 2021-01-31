@@ -11,7 +11,7 @@ google.charts.setOnLoadCallback(refreshChart);
 function refreshChart() {
   var jsonDataObject = [];
   var graph_arr = [
-    ["Order ID", "Time Taken", { role: "style" }, { role: "annotation" }]
+    ["Order ID", "Time Taken", { role: "style" }, { role: "annotation" }],
   ];
   var bar_color = [];
   var bar_item = [];
@@ -30,13 +30,16 @@ function refreshChart() {
       // Setting color for the coloumns of graph according to priority of items
       for (var j in jsonDataObject) {
         if (jsonDataObject[j].Priority == "HP") {
-          var color1 = "fill-color:#ce465c;stroke-color:#FF0000;fill-opacity:0.5;stroke-width:5";
-          var item = "Medicine";
+          var color1 =
+            "fill-color:#ce465c;stroke-color:#FF0000;fill-opacity:0.5;stroke-width:5";
+          var item = "\tMedicine\t";
         } else if (jsonDataObject[j].Priority == "MP") {
-          var color1 = "fill-color:#ffe5ab;stroke-color:#ffc803;fill-opacity:0.5;stroke-width:5";
+          var color1 =
+            "fill-color:#ffe5ab;stroke-color:#ffc803;fill-opacity:0.5;stroke-width:5";
           var item = "Food";
         } else if (jsonDataObject[j].Priority == "LP") {
-          var color1 = "fill-color:#3b956c;stroke-color:#106e45;fill-opacity:0.5;stroke-width:5";
+          var color1 =
+            "fill-color:#3b956c;stroke-color:#106e45;fill-opacity:0.5;stroke-width:5";
           var item = "Clothes";
         }
         bar_color.push(color1);
@@ -49,7 +52,7 @@ function refreshChart() {
           jsonDataObject[j].OderID,
           jsonDataObject[j].TimeTaken,
           bar_color[j],
-          bar_item[j]
+          bar_item[j],
         ]);
       }
       var graphArray_Final = google.visualization.arrayToDataTable(graph_arr);
@@ -57,10 +60,49 @@ function refreshChart() {
       var data = new google.visualization.DataView(graphArray_Final);
 
       var options = {
-        title: "Time Taken for items to be Shipped",
-        hAxis: { title: "Order ID" },
-        vAxis: { title: "Time Taken (s)" },
+        titlePosition: "none",
+        hAxis: {
+          title: "Order ID",
+          titleTextStyle: {
+            color: "white",
+            fontSize: 25,
+            bold: "true",
+            italic: "true",
+          },
+          textStyle: {
+            color: "white",
+            italic: "true",
+            fontSize: 20,
+          },
+          gridlines: {
+            color: "white",
+          },
+        },
+        vAxis: {
+          title: "Time Taken (s)",
+          titleTextStyle: {
+            color: "white",
+            fontSize: 25,
+            bold: "true",
+            italic: "true",
+          },
+          textStyle: {
+            color: "white",
+            italic: "true",
+            fontSize: 20,
+          },
+        },
+        bar: { groupWidth: "65%" },
         legend: { position: "none" },
+        backgroundColor: "black",
+        annotations: {
+          alwaysOutside: "true",
+          textStyle: {
+            fontSize: 20,
+            fontName: "Times-Roman",
+            italic: "true",
+          },
+        },
       };
       var chart = new google.visualization.ColumnChart(
         document.getElementById("column_chart")

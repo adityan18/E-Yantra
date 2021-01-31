@@ -44,12 +44,29 @@ tbody tr:hover {
   color: beige;
 }
 
-.chart {
-  height: 500px;
+#chart {
+  /* height: 500px; */
   grid-area: chart;
   padding: 10px;
   margin: 10px;
   overflow: hidden;
+}
+
+#chart #column_chart {
+  height: 500px;
+  /* padding: 10px;
+  margin: 10px; */
+  overflow: hidden;
+}
+
+#chart h1 {
+  color: white;
+  text-align: center;
+  margin-bottom: 0;
+  font-weight: 200;
+  font-size: 50;
+  /* position: relative; */
+  /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
 }
 
 #grid-container {
