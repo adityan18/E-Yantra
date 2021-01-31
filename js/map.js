@@ -4,7 +4,7 @@ $(document).ready(function () {
   refreshMap();
 
   // Fetch every 5 second
-  // setInterval(refreshMap, 5000);
+  setInterval(refreshMap, 5000);
 });
 
 function refreshMap() {
