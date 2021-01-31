@@ -2,7 +2,7 @@
 $(document).ready(function () {
   refreshTable();
 
-  setInterval(refreshTable, 1000)
+  // setInterval(refreshTable, 1000)
 });
 
 function refreshTable() {

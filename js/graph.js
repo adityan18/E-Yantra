@@ -3,15 +3,19 @@ $(document).ready(function () {
   refreshChart();
   // Fetch every 5 second
 
-  setInterval(refreshChart, 5000);
+  // setInterval(refreshChart, 5000);
 });
 google.charts.load("current", { packages: ["corechart"] });
 google.charts.setOnLoadCallback(refreshChart);
 
 function refreshChart() {
   var jsonDataObject = [];
-  var graph_arr = [["Order ID", "Time Taken", { role: "style" }]];
+  var graph_arr = [
+    ["Order ID", "Time Taken", { role: "style" }, { role: "annotation" }]
+  ];
   var bar_color = [];
+  var bar_item = [];
+
   $.getJSON(
     "https://spreadsheets.google.com/feeds/list/19w-_REjKOCMT2vZmgIAFoXAdflyAa_hDTwcctmt2D-Q/1/public/full?alt=json",
     function (data) {
@@ -26,13 +30,17 @@ function refreshChart() {
       // Setting color for the coloumns of graph according to priority of items
       for (var j in jsonDataObject) {
         if (jsonDataObject[j].Priority == "HP") {
-          var color = "#FF0000";
+          var color1 = "fill-color:#ce465c;stroke-color:#FF0000;fill-opacity:0.5;stroke-width:5";
+          var item = "Medicine";
         } else if (jsonDataObject[j].Priority == "MP") {
-          var color = "#FFFF00";
+          var color1 = "fill-color:#ffe5ab;stroke-color:#ffc803;fill-opacity:0.5;stroke-width:5";
+          var item = "Food";
         } else if (jsonDataObject[j].Priority == "LP") {
-          var color = "#00FF00";
+          var color1 = "fill-color:#3b956c;stroke-color:#106e45;fill-opacity:0.5;stroke-width:5";
+          var item = "Clothes";
         }
-        bar_color.push(color);
+        bar_color.push(color1);
+        bar_item.push(item);
       }
 
       // Converting Json Object to JavaScript Array
@@ -41,6 +49,7 @@ function refreshChart() {
           jsonDataObject[j].OderID,
           jsonDataObject[j].TimeTaken,
           bar_color[j],
+          bar_item[j]
         ]);
       }
       var graphArray_Final = google.visualization.arrayToDataTable(graph_arr);

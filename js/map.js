@@ -4,7 +4,7 @@ $(document).ready(function () {
   refreshMap();
 
   // Fetch every 5 second
-  setInterval(refreshMap, 5000);
+  // setInterval(refreshMap, 5000);
 });
 
 function refreshMap() {
@@ -67,6 +67,12 @@ function refreshMap() {
           marker.on("click", onClick_Marker);
           // Attach the corresponding JSON data to your marker:
           marker.myJsonData = jsonDataObject[j];
+          if (marker.myJsonData.Dispatch != "Yes"){
+            marker.myJsonData.Dispatch = "No"
+          }
+          if (marker.myJsonData.Shipped != "Yes"){
+            marker.myJsonData.Shipped = "No"
+          }
 
           function onClick_Marker(e) {
             var marker = e.target;
@@ -76,10 +82,12 @@ function refreshMap() {
                 "<center>City:<b>" +
                   marker.myJsonData.City +
                   "</b></center>" +
-                  "Order ID: " +
+                  "<center>Order ID: " +
                   marker.myJsonData.OderID +
                   " || Item: " +
-                  marker.myJsonData.Item
+                  marker.myJsonData.Item +
+                  "</center><center>Dispatched: <b>" + marker.myJsonData.Dispatch+
+                  "</b> || Shipped: <b>" + marker.myJsonData.Shipped
               )
               .openOn(map);
           }
