@@ -35,11 +35,11 @@ function refreshChart() {
           var item = "\tMedicine\t";
         } else if (jsonDataObject[j].Priority == "MP") {
           var color1 =
-            "fill-color:#ffe5ab;stroke-color:#ffc803;fill-opacity:0.5;stroke-width:5";
+            "fill-color:#ffe5ab;stroke-color:#FFFF00;fill-opacity:0.5;stroke-width:5";
           var item = "Food";
         } else if (jsonDataObject[j].Priority == "LP") {
           var color1 =
-            "fill-color:#3b956c;stroke-color:#106e45;fill-opacity:0.5;stroke-width:5";
+            "fill-color:#3b956c;stroke-color:#00FF00;fill-opacity:0.5;stroke-width:5";
           var item = "Clothes";
         }
         bar_color.push(color1);
