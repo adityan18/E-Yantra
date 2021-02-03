@@ -31,72 +31,74 @@ function refreshMap() {
           Shipped: data.feed.entry[i].gsx$shipped.$t,
         };
         jsonDataObject.push(json_data);
+      }
 
-        for (var j = 0; j < jsonDataObject.length; j++) {
-          var LeafIcon = L.Icon.extend({
-            options: {
-              iconSize: [41, 41],
-              iconAnchor: [21, 41],
-              popupAnchor: [-3, -76],
-            },
+      for (var j = 0; j < jsonDataObject.length; j++) {
+        var LeafIcon = L.Icon.extend({
+          options: {
+            iconSize: [41, 41],
+            iconAnchor: [21, 41],
+            popupAnchor: [-3, -76],
+          },
+        });
+
+        if (jsonDataObject[j].Shipped == "Yes") {
+          var Icon = new LeafIcon({
+            iconUrl: "img/green.png",
           });
-
-          if (jsonDataObject[j].Shipped == "Yes") {
-            var Icon = new LeafIcon({
-              iconUrl: "img/green.png",
-            });
-          } else if (jsonDataObject[j].Dispatch == "Yes") {
-            var Icon = new LeafIcon({
-              iconUrl: "img/yellow.png",
-            });
-          } else {
-            var Icon = new LeafIcon({
-              iconUrl: "img/red.png",
-            });
-          }
-
-          var marker = L.marker(
-            L.latLng(
-              parseFloat(jsonDataObject[j].Latitude),
-              parseFloat(jsonDataObject[j].Longitude)
-            ),
-            { icon: Icon }
-          );
-          1;
-          map.addLayer(marker);
-          marker.on("click", onClick_Marker);
-          // Attach the corresponding JSON data to your marker:
-          marker.myJsonData = jsonDataObject[j];
-          if (marker.myJsonData.Dispatch != "Yes"){
-            marker.myJsonData.Dispatch = "No"
-          }
-          if (marker.myJsonData.Shipped != "Yes"){
-            marker.myJsonData.Shipped = "No"
-          }
-
-          function onClick_Marker(e) {
-            var marker = e.target;
-            popup = L.popup()
-              .setLatLng(marker.getLatLng())
-              .setContent(
-                "<center>City:<b>" +
-                  marker.myJsonData.City +
-                  "</b></center>" +
-                  "<center>Order ID: " +
-                  marker.myJsonData.OderID +
-                  " || Item: " +
-                  marker.myJsonData.Item +
-                  "</center><center>Dispatched: <b>" + marker.myJsonData.Dispatch+
-                  "</b> || Shipped: <b>" + marker.myJsonData.Shipped
-              )
-              .openOn(map);
-          }
-
-          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-            attribution:
-              '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-          }).addTo(map);
+        } else if (jsonDataObject[j].Dispatch == "Yes") {
+          var Icon = new LeafIcon({
+            iconUrl: "img/yellow.png",
+          });
+        } else {
+          var Icon = new LeafIcon({
+            iconUrl: "img/red.png",
+          });
         }
+
+        var marker = L.marker(
+          L.latLng(
+            parseFloat(jsonDataObject[j].Latitude),
+            parseFloat(jsonDataObject[j].Longitude)
+          ),
+          { icon: Icon }
+        );
+        
+        map.addLayer(marker);
+        marker.on("click", onClick_Marker);
+        // Attach the corresponding JSON data to your marker:
+        marker.myJsonData = jsonDataObject[j];
+        if (marker.myJsonData.Dispatch != "Yes") {
+          marker.myJsonData.Dispatch = "No";
+        }
+        if (marker.myJsonData.Shipped != "Yes") {
+          marker.myJsonData.Shipped = "No";
+        }
+
+        function onClick_Marker(e) {
+          var marker = e.target;
+          popup = L.popup()
+            .setLatLng(marker.getLatLng())
+            .setContent(
+              "<center>City:<b>" +
+                marker.myJsonData.City +
+                "</b></center>" +
+                "<center>Order ID: " +
+                marker.myJsonData.OderID +
+                " || Item: " +
+                marker.myJsonData.Item +
+                "</center><center>Dispatched: <b>" +
+                marker.myJsonData.Dispatch +
+                "</b> || Shipped: <b>" +
+                marker.myJsonData.Shipped
+            )
+            .openOn(map);
+        }
+
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution:
+            '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+        }).addTo(map);
       }
     }
   );

@@ -53,7 +53,7 @@ tbody tr:hover {
 }
 
 #chart #column_chart {
-  height: 500px;
+  height: 600px;
   /* padding: 10px;
   margin: 10px; */
   overflow: hidden;
@@ -64,7 +64,8 @@ tbody tr:hover {
   text-align: center;
   margin-bottom: 0;
   font-weight: 200;
-  font-size: 50;
+  font-size: 60;
+  font-style: italic;
   /* position: relative; */
   /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
 }

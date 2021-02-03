@@ -3,7 +3,7 @@ $(document).ready(function () {
   refreshChart();
   // Fetch every 5 second
 
-  setInterval(refreshChart, 5000);
+  setInterval(refreshChart, 3000);
 });
 google.charts.load("current", { packages: ["corechart"] });
 google.charts.setOnLoadCallback(refreshChart);
@@ -60,7 +60,17 @@ function refreshChart() {
       var data = new google.visualization.DataView(graphArray_Final);
 
       var options = {
-        titlePosition: "none",
+        // title: "Time Taken for Items to be Shipped",
+        titlePosition: "center",
+        titleTextStyle: {
+          color: "white",
+          fontSize: 40,
+          bold:"true",
+          italic:"true",
+          fontStyle:"Ariel",
+          position:"center"
+
+        },
         hAxis: {
           title: "Order ID",
           titleTextStyle: {
@@ -75,7 +85,7 @@ function refreshChart() {
             fontSize: 20,
           },
           gridlines: {
-            color: "white",
+            // color: "black",
           },
         },
         vAxis: {
