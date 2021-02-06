@@ -4,7 +4,7 @@ $(document).ready(function () {
   refreshMap();
 
   // Fetch every 5 second
-  setInterval(refreshMap, 5000);
+  setInterval(refreshMap, 3000);
 });
 
 function refreshMap() {
@@ -63,7 +63,7 @@ function refreshMap() {
           ),
           { icon: Icon }
         );
-        
+
         map.addLayer(marker);
         marker.on("click", onClick_Marker);
         // Attach the corresponding JSON data to your marker:

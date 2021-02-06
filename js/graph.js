@@ -3,7 +3,7 @@ $(document).ready(function () {
   refreshChart();
   // Fetch every 5 second
 
-  setInterval(refreshChart, 3000);
+  setInterval(refreshChart, 2000);
 });
 google.charts.load("current", { packages: ["corechart"] });
 google.charts.setOnLoadCallback(refreshChart);
