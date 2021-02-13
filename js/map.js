@@ -14,7 +14,12 @@ function refreshMap() {
     container._leaflet_id = null;
   }
 
-  var map = L.map("map").setView([20.5937, 78.9629], 5);
+  var map = L.map("map", { scrollWheelZoom: false }).setView(
+    [21.5937, 78.9629],
+    5.2
+  );
+  map.removeControl(map.zoomControl);
+  // map.removeControl(map.scrollWheelZoom);
   var jsonDataObject = [];
 
   $.getJSON(
@@ -63,9 +68,9 @@ function refreshMap() {
           ),
           { icon: Icon }
         );
-
+        map.addTitle("Hello Wolrd", (color = "white"));
         map.addLayer(marker);
-        marker.on("click", onClick_Marker);
+        marker.on("mouseover", onClick_Marker);
         // Attach the corresponding JSON data to your marker:
         marker.myJsonData = jsonDataObject[j];
         if (marker.myJsonData.Dispatch != "Yes") {
@@ -83,11 +88,11 @@ function refreshMap() {
               "<center>City:<b>" +
                 marker.myJsonData.City +
                 "</b></center>" +
-                "<center>Order ID: " +
+                "<center>Order ID: <b>" +
                 marker.myJsonData.OderID +
-                " || Item: " +
+                "</b> || Item: <b>" +
                 marker.myJsonData.Item +
-                "</center><center>Dispatched: <b>" +
+                "</b></center><center>Dispatched: <b>" +
                 marker.myJsonData.Dispatch +
                 "</b> || Shipped: <b>" +
                 marker.myJsonData.Shipped

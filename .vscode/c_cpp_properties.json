@@ -1,0 +1,25 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/aditya/Documents/ROS/task5_ws/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/aditya/Documents/ROS/task5_ws/src/vb_simulation_pkgs/gazebo-conveyor/include/**",
+        "/home/aditya/Documents/ROS/task5_ws/src/vb_simulation_pkgs/gazebo_logical_camera/include/**",
+        "/home/aditya/Documents/ROS/task5_ws/src/vb_simulation_pkgs/gazebo_ros_pkgs/gazebo_plugins/include/**",
+        "/home/aditya/Documents/ROS/task5_ws/src/vb_simulation_pkgs/gazebo_ros_pkgs/gazebo_ros/include/**",
+        "/home/aditya/Documents/ROS/task5_ws/src/vb_simulation_pkgs/gazebo_ros_pkgs/gazebo_ros_control/include/**",
+        "/home/aditya/Documents/ROS/task5_ws/src/vb_simulation_pkgs/gazebo_ros_link_attacher/include/**",
+        "/home/aditya/Documents/ROS/task5_ws/src/vb_simulation_pkgs/hrwros_gazebo/include/**",
+        "/home/aditya/Documents/ROS/task5_ws/src/vb_simulation_pkgs/universal_robot/ur_kinematics/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}
