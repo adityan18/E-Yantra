@@ -68,7 +68,6 @@ function refreshMap() {
           ),
           { icon: Icon }
         );
-        map.addTitle("Hello Wolrd", (color = "white"));
         map.addLayer(marker);
         marker.on("mouseover", onClick_Marker);
         // Attach the corresponding JSON data to your marker:
