@@ -80,3 +80,8 @@ tbody tr:hover {
   margin: 10px;
   /* border: 10px solid ; */
 }
+
+#marq{
+  color: white;
+  font-style: italic;
+}
