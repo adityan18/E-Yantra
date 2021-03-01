@@ -17,7 +17,8 @@ function refreshChart() {
   var bar_item = [];
 
   $.getJSON(
-    "https://spreadsheets.google.com/feeds/list/19w-_REjKOCMT2vZmgIAFoXAdflyAa_hDTwcctmt2D-Q/1/public/full?alt=json",
+    "https://spreadsheets.google.com/feeds/list/1AhQHelY8bow_DsAJU7Pqo-CG6Q5T-jj-tRSoLKFE38g/1/public/full?alt=json",
+
     function (data) {
       for (var i = 0; i < data.feed.entry.length; ++i) {
         var json_data = {
